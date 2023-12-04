@@ -15,11 +15,13 @@ public class ThingController {
 
     Logger logger = LoggerFactory.getLogger(ThingController.class);
 
+    @CrossOrigin
     @PostMapping("/things")
     public Thing createThing(@RequestBody Thing thing) {
         return service.save(thing);
     }
 
+    @CrossOrigin
     @GetMapping("/things/{id}")
     public Thing getThing(@PathVariable String id) {
         logger.info("GET request on route things with {}", id);
@@ -27,10 +29,10 @@ public class ThingController {
         return service.get(thingId);
     }
 
+    @CrossOrigin
     @GetMapping("/things")
     public List<Thing> getAllThings() {
         return service.getAll();
     }
-
 
 }
