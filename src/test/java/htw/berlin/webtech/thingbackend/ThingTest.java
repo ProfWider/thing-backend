@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
             int price = 99;
 
             //"System under test" aufsetzen
-            Thing thing = new Thing(name, price);
+            Thing thing = new Thing(name, price, "wider@htw-berlin.de");
             thing.setId(42L);
 
             //Erwartetes Ergebnis

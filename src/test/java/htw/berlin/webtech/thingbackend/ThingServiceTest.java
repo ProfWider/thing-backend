@@ -23,8 +23,8 @@ public class ThingServiceTest {
     @Test
     @DisplayName("should find a thing by its id")
     void testGet() {
-        var t1 = new Thing("Lineal", 99);
-        var t2 = new Thing("Stift", 199);
+        var t1 = new Thing("Lineal", 99, "wider@htw-berlin.de");
+        var t2 = new Thing("Stift", 199, "wider@htw-berlin.de");
         doReturn(Optional.of(t1)).when(repository).findById(42L);
         doReturn(Optional.of(t2)).when(repository).findById(43L);
 
