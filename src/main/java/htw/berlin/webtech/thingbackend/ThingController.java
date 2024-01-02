@@ -31,8 +31,8 @@ public class ThingController {
 
     @CrossOrigin
     @GetMapping("/things")
-    public List<Thing> getAllThings() {
-        return service.getAll();
+    public List<Thing> getAllThings(@RequestParam("owner") String owner) {
+        return owner.equals("") ? service.getAllWithoutOwner() : service.getAllOwnedBy(owner);
     }
 
 }
