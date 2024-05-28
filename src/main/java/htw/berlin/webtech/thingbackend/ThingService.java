@@ -23,7 +23,7 @@ public class ThingService {
     public List<Thing> getAllWithoutOwner() {
         Iterable<Thing> iterator = repo.findAll();
         List<Thing> things = new ArrayList<Thing>();
-        for (Thing thing : iterator) if(thing.getOwner()==null) things.add(thing);
+        for (Thing thing : iterator) if(thing.getOwner()==null || thing.getOwner().equals("")) things.add(thing);
         return things;
     }
 
