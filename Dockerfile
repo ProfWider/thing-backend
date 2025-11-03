@@ -1,7 +1,7 @@
 #
 # Build stage
 #
-FROM gradle:9-jdk-jammy AS build
+FROM gradle:9-jdk25 AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN gradle build --no-daemon
